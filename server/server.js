@@ -16,14 +16,11 @@ const shopReviewRouter = require("./routes/shop/review-routes");
 const commonFeatureRouter = require("./routes/common/feature-routes");
 
 mongoose
-  .connect("mongodb+srv://olamilekan:olamilekan@cluster0.8vxcn.mongodb.net/")
+  .connect("mongodb+srv://ola:pab@cluster0.sdzhq.mongodb.net/")
   .then(() => console.log("MongoDB connected"))
   .catch((error) => console.log(error));
 
-mongoose
-  .connect("db_url")
-  .then(() => console.log("MongoDB connected"))
-  .catch((error) => console.log(error));
+
 
 const app = express();
 const PORT = process.env.PORT || 5000;
