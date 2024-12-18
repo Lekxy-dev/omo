@@ -15,12 +15,18 @@ const shopReviewRouter = require("./routes/shop/review-routes");
 
 const commonFeatureRouter = require("./routes/common/feature-routes");
 
-mongoose
-  .connect("mongodb+srv://ola:pab@cluster0.sdzhq.mongodb.net/")
-  .then(() => console.log("MongoDB connected"))
-  .catch((error) => console.log(error));
 
 
+
+  // Use the MONGODB_URI environment variable
+  const MONGODB_URI = process.env.MONGODB_URI || "mongodb+srv://ola:pab@cluster0.sdzhq.mongodb.net/your_database_name";
+  
+  mongoose
+    .connect(MONGODB_URI)
+    .then(() => console.log("MongoDB connected"))
+    .catch((error) => console.log("MongoDB connection error:", error));
+  
+  // ... rest of your server code
 
 const app = express();
 const PORT = process.env.PORT || 5000;
